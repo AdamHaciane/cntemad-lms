@@ -1,0 +1,50 @@
+[project]
+name = "cntemad_lms"
+version = "0.1.0"
+description = "Plateforme LMS du CNTEMAD Madagascar"
+authors = [
+    {name = "CNTEMAD", email = "contact@cntemad.mg"}
+]
+license = {text = "GPL-3.0"}
+readme = "README.md"
+requires-python = ">=3.10"
+keywords = ["frappe", "lms", "education", "madagascar"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Web Environment",
+    "Framework :: Frappe",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Education",
+]
+
+[project.urls]
+Homepage = "https://github.com/cntemad-mg/cntemad-lms"
+Documentation = "https://cntemad-mg.github.io/cntemad-lms/"
+Repository = "https://github.com/cntemad-mg/cntemad-lms.git"
+Issues = "https://github.com/cntemad-mg/cntemad-lms/issues"
+
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.black]
+line-length = 99
+target-version = ['py310']
+
+[tool.isort]
+profile = "black"
+line_length = 99
+
+[tool.ruff]
+line-length = 99
+select = ["E", "F", "W", "I", "UP", "B"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]

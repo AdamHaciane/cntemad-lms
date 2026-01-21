@@ -1,0 +1,21 @@
+# Code Owners pour CNTEMAD LMS
+# Ces personnes seront automatiquement assignées pour review
+
+# Default owners
+* @cntemad-mg/core-team
+
+# Frontend
+/frontend/ @cntemad-mg/frontend-team
+
+# Backend / Doctypes
+/cntemad_lms/cntemad_lms/doctype/ @cntemad-mg/backend-team
+
+# API
+/cntemad_lms/cntemad_lms/api/ @cntemad-mg/backend-team
+
+# Documentation
+/docs/ @cntemad-mg/docs-team
+*.md @cntemad-mg/docs-team
+
+# CI/CD
+/.github/ @cntemad-mg/devops-team

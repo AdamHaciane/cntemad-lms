@@ -1,0 +1,116 @@
+{
+  "actions": [],
+  "autoname": "naming_series:",
+  "creation": "2025-01-01 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "student",
+    "amount",
+    "provider",
+    "column_break_1",
+    "status",
+    "ec",
+    "section_transaction",
+    "provider_transaction_id",
+    "phone_last_4",
+    "completed_at",
+    "failure_reason"
+  ],
+  "fields": [
+    {
+      "fieldname": "student",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Étudiant",
+      "options": "CNTEMAD Student",
+      "reqd": 1
+    },
+    {
+      "fieldname": "amount",
+      "fieldtype": "Currency",
+      "in_list_view": 1,
+      "label": "Montant (Ar)",
+      "reqd": 1
+    },
+    {
+      "fieldname": "provider",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Provider",
+      "options": "mvola\norange_money\nairtel_money",
+      "reqd": 1
+    },
+    {
+      "fieldname": "column_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Statut",
+      "options": "Pending\nProcessing\nCompleted\nFailed\nRefunded",
+      "default": "Pending"
+    },
+    {
+      "fieldname": "ec",
+      "fieldtype": "Link",
+      "label": "EC",
+      "options": "CNTEMAD EC"
+    },
+    {
+      "fieldname": "section_transaction",
+      "fieldtype": "Section Break",
+      "label": "Détails transaction"
+    },
+    {
+      "fieldname": "provider_transaction_id",
+      "fieldtype": "Data",
+      "label": "ID Transaction Provider"
+    },
+    {
+      "fieldname": "phone_last_4",
+      "fieldtype": "Data",
+      "label": "4 derniers chiffres téléphone"
+    },
+    {
+      "fieldname": "completed_at",
+      "fieldtype": "Datetime",
+      "label": "Date de complétion"
+    },
+    {
+      "fieldname": "failure_reason",
+      "fieldtype": "Small Text",
+      "label": "Raison d'échec"
+    }
+  ],
+  "links": [],
+  "modified": "2025-01-01 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "CNTEMAD LMS",
+  "name": "CNTEMAD Payment",
+  "naming_rule": "By \"Naming Series\" field",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "read": 1,
+      "role": "Student"
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1
+}

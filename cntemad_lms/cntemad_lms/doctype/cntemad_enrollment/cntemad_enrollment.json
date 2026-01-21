@@ -1,0 +1,104 @@
+{
+  "actions": [],
+  "autoname": "naming_series:",
+  "creation": "2025-01-01 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "student",
+    "course",
+    "ec",
+    "column_break_1",
+    "status",
+    "progress_percent",
+    "section_dates",
+    "enrolled_at",
+    "validation_date"
+  ],
+  "fields": [
+    {
+      "fieldname": "student",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Étudiant",
+      "options": "CNTEMAD Student",
+      "reqd": 1
+    },
+    {
+      "fieldname": "course",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Cours",
+      "options": "CNTEMAD Course"
+    },
+    {
+      "fieldname": "ec",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "EC",
+      "options": "CNTEMAD EC"
+    },
+    {
+      "fieldname": "column_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Statut",
+      "options": "Pending\nActive\nIn Progress\nValidated\nFailed",
+      "default": "Pending"
+    },
+    {
+      "fieldname": "progress_percent",
+      "fieldtype": "Percent",
+      "label": "Progression",
+      "default": 0
+    },
+    {
+      "fieldname": "section_dates",
+      "fieldtype": "Section Break",
+      "label": "Dates"
+    },
+    {
+      "fieldname": "enrolled_at",
+      "fieldtype": "Datetime",
+      "label": "Date d'inscription",
+      "default": "Now"
+    },
+    {
+      "fieldname": "validation_date",
+      "fieldtype": "Date",
+      "label": "Date de validation"
+    }
+  ],
+  "links": [],
+  "modified": "2025-01-01 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "CNTEMAD LMS",
+  "name": "CNTEMAD Enrollment",
+  "naming_rule": "By \"Naming Series\" field",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "read": 1,
+      "role": "Student"
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1
+}

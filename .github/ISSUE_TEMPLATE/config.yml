@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions
+    url: https://github.com/cntemad-mg/cntemad-lms/discussions
+    about: Posez vos questions dans les Discussions
+  - name: Documentation
+    url: https://cntemad-mg.github.io/cntemad-lms/
+    about: Consultez la documentation

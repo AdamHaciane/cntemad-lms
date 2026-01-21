@@ -1,0 +1,171 @@
+/**
+ * CNTEMAD LMS - Theme VitePress
+ * Couleurs officielles du CNTEMAD Madagascar
+ */
+
+:root {
+  /* Couleurs primaires CNTEMAD */
+  --vp-c-brand-1: #1e40af;  /* Bleu CNTEMAD principal */
+  --vp-c-brand-2: #2563eb;  /* Bleu plus clair */
+  --vp-c-brand-3: #3b82f6;  /* Bleu hover */
+  --vp-c-brand-soft: rgba(30, 64, 175, 0.1);
+
+  /* Couleurs secondaires */
+  --cntemad-green: #059669;   /* Vert succès/validation */
+  --cntemad-orange: #d97706;  /* Orange attention */
+  --cntemad-red: #dc2626;     /* Rouge erreur */
+
+  /* Drapeau Madagascar */
+  --mg-red: #fc3d32;
+  --mg-green: #007e3a;
+  --mg-white: #ffffff;
+}
+
+/* Mode sombre */
+.dark {
+  --vp-c-brand-1: #3b82f6;
+  --vp-c-brand-2: #60a5fa;
+  --vp-c-brand-3: #93c5fd;
+  --vp-c-brand-soft: rgba(59, 130, 246, 0.15);
+}
+
+/* Hero section personnalisée */
+.VPHero .name {
+  background: linear-gradient(135deg, var(--vp-c-brand-1) 0%, var(--vp-c-brand-3) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.VPHero .tagline {
+  color: var(--vp-c-text-2);
+}
+
+/* Boutons */
+.VPButton.brand {
+  background-color: var(--vp-c-brand-1);
+  border-color: var(--vp-c-brand-1);
+}
+
+.VPButton.brand:hover {
+  background-color: var(--vp-c-brand-2);
+  border-color: var(--vp-c-brand-2);
+}
+
+/* Feature cards */
+.VPFeature {
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.VPFeature:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar active */
+.VPSidebarItem.is-active > .item > .link > .text {
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+}
+
+/* Code blocks */
+.vp-code-group .tabs label.active {
+  color: var(--vp-c-brand-1);
+  border-bottom-color: var(--vp-c-brand-1);
+}
+
+/* Tables */
+.vp-doc table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.vp-doc th {
+  background-color: var(--vp-c-brand-soft);
+  font-weight: 600;
+}
+
+.vp-doc th,
+.vp-doc td {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--vp-c-divider);
+}
+
+/* Badges personnalisés */
+.badge-student {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.badge-teacher {
+  background-color: #d1fae5;
+  color: #059669;
+}
+
+.badge-admin {
+  background-color: #fef3c7;
+  color: #d97706;
+}
+
+/* Alertes/Callouts */
+.custom-block.tip {
+  border-color: var(--cntemad-green);
+}
+
+.custom-block.warning {
+  border-color: var(--cntemad-orange);
+}
+
+.custom-block.danger {
+  border-color: var(--cntemad-red);
+}
+
+.custom-block.info {
+  border-color: var(--vp-c-brand-1);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .VPHero .name {
+    font-size: 2rem;
+  }
+
+  .VPHero .tagline {
+    font-size: 1.1rem;
+  }
+
+  .VPFeature {
+    margin: 0.5rem 0;
+  }
+}
+
+/* Footer Madagascar flag accent */
+.VPFooter::before {
+  content: '';
+  display: block;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--mg-white) 0%,
+    var(--mg-white) 33%,
+    var(--mg-red) 33%,
+    var(--mg-red) 66%,
+    var(--mg-green) 66%,
+    var(--mg-green) 100%
+  );
+}
+
+/* Print styles */
+@media print {
+  .VPNav,
+  .VPSidebar,
+  .VPFooter {
+    display: none;
+  }
+
+  .VPDoc {
+    padding: 0;
+  }
+}

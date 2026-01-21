@@ -1,0 +1,2 @@
+# Patches for CNTEMAD LMS
+# Format: app_name.patches.patch_name

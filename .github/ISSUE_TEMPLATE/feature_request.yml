@@ -1,0 +1,63 @@
+name: Feature Request
+description: Proposer une nouvelle fonctionnalité
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci de proposer une amélioration !
+
+  - type: dropdown
+    id: role
+    attributes:
+      label: En tant que...
+      description: Quel type d'utilisateur êtes-vous ?
+      options:
+        - Étudiant
+        - Enseignant
+        - Admin Centre
+        - Admin National
+        - Développeur
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problème ou besoin
+      description: Quel problème cette fonctionnalité résoudrait-elle ?
+      placeholder: Je suis frustré quand...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Solution proposée
+      description: Décrivez la solution que vous imaginez.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considérées
+      description: Avez-vous pensé à d'autres solutions ?
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Importance
+      options:
+        - Nice to have
+        - Important
+        - Critique
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Contexte supplémentaire
+      description: Captures d'écran, mockups, références...
