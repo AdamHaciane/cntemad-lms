@@ -18,8 +18,7 @@ export default defineConfig({
   locales: {
     root: {
       label: 'Français',
-      lang: 'fr',
-      link: '/fr/'
+      lang: 'fr'
     },
     mg: {
       label: 'Malagasy',
