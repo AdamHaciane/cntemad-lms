@@ -29,7 +29,7 @@ export default defineConfig({
 
   themeConfig: {
     logo: '/logo.svg',
-    siteTitle: 'CNTEMAD LMS',
+    siteTitle: false,
 
     // Navigation principale
     nav: [
