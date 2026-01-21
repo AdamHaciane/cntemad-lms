@@ -130,8 +130,8 @@ export default defineConfig({
 
     // Footer
     footer: {
-      message: 'Publié sous licence GPLv3',
-      copyright: '© 2024 CNTEMAD Madagascar'
+      message: 'Fait avec ❤️ à Madagascar | Supporté par SAYNA',
+      copyright: '© 2024-2026 CNTEMAD Madagascar'
     },
 
     // Recherche
