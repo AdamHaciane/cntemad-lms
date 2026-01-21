@@ -28,7 +28,10 @@ export default defineConfig({
   },
 
   themeConfig: {
-    logo: '/logo.svg',
+    logo: {
+      src: '/logo.svg',
+      alt: 'CNTEMAD LMS'
+    },
     siteTitle: false,
 
     // Navigation principale
@@ -124,7 +127,7 @@ export default defineConfig({
 
     // Liens sociaux
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/cntemad-mg/cntemad-lms' }
+      { icon: 'github', link: 'https://github.com/AdamHaciane/cntemad-lms' }
     ],
 
     // Footer
@@ -161,7 +164,7 @@ export default defineConfig({
 
     // Éditer sur GitHub
     editLink: {
-      pattern: 'https://github.com/cntemad-mg/cntemad-lms/edit/main/docs/:path',
+      pattern: 'https://github.com/AdamHaciane/cntemad-lms/edit/main/docs/:path',
       text: 'Modifier cette page sur GitHub'
     },
 
