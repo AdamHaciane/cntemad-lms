@@ -131,7 +131,7 @@ export default defineConfig({
     // Footer
     footer: {
       message: 'Fait avec ❤️ à Madagascar | Supporté par SAYNA',
-      copyright: '© 2024-2026 CNTEMAD Madagascar'
+      copyright: '© 1992-2026 CNTEMAD Madagascar'
     },
 
     // Recherche
