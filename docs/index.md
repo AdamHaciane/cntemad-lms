@@ -75,8 +75,3 @@ Cette documentation est disponible en :
 - **Français** (par défaut) - [Accéder](/fr/etudiant/inscription)
 - **Malagasy** - [Miditra](/mg/etudiant/inscription)
 
----
-
-<div style="text-align: center; margin-top: 2rem; opacity: 0.7;">
-  Fait avec ❤️ à Madagascar
-</div>
