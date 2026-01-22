@@ -30,28 +30,28 @@ fixtures = [
 # Document Events
 doc_events = {
     "CNTEMAD Payment": {
-        "after_insert": "cntemad_lms.api.payment.on_payment_created",
-        "on_update": "cntemad_lms.api.payment.on_payment_updated",
+        "after_insert": "cntemad_lms.cntemad_lms.api.payment.on_payment_created",
+        "on_update": "cntemad_lms.cntemad_lms.api.payment.on_payment_updated",
     },
     "CNTEMAD Enrollment": {
-        "after_insert": "cntemad_lms.api.enrollment.on_enrollment_created",
+        "after_insert": "cntemad_lms.cntemad_lms.api.enrollment.on_enrollment_created",
     },
 }
 
 # Scheduled Tasks
 scheduler_events = {
     "daily": [
-        "cntemad_lms.tasks.daily.send_progress_reminders",
+        "cntemad_lms.cntemad_lms.tasks.daily.send_progress_reminders",
     ],
     "weekly": [
-        "cntemad_lms.tasks.weekly.generate_center_reports",
+        "cntemad_lms.cntemad_lms.tasks.weekly.generate_center_reports",
     ],
 }
 
 # Jinja
 jinja = {
     "methods": [
-        "cntemad_lms.utils.get_student_progress",
+        "cntemad_lms.cntemad_lms.utils.get_student_progress",
     ],
 }
 
