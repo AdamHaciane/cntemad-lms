@@ -37,9 +37,23 @@ export default defineConfig({
     // Navigation principale
     nav: [
       { text: 'Accueil', link: '/' },
-      { text: 'Étudiant', link: '/fr/etudiant/inscription' },
-      { text: 'Enseignant', link: '/fr/enseignant/creer-cours' },
-      { text: 'Admin', link: '/fr/admin/dashboard' },
+      {
+        text: 'Guides',
+        items: [
+          { text: 'Étudiant', link: '/fr/etudiant/inscription' },
+          { text: 'Enseignant', link: '/fr/enseignant/creer-cours' },
+          { text: 'Évaluateur', link: '/fr/evaluateur/corrections' },
+          { text: 'Mentor', link: '/fr/mentor/mes-mentores' },
+          { text: 'Parent', link: '/fr/parent/mes-enfants' },
+        ]
+      },
+      {
+        text: 'Admin',
+        items: [
+          { text: 'Admin Centre', link: '/fr/admin-centre/dashboard' },
+          { text: 'Admin National', link: '/fr/admin-national/dashboard' },
+        ]
+      },
       { text: 'Technique', link: '/fr/technique/api' }
     ],
 
@@ -65,12 +79,56 @@ export default defineConfig({
           ]
         }
       ],
-      '/fr/admin/': [
+      '/fr/admin-centre/': [
         {
-          text: 'Guide Administrateur',
+          text: 'Admin Centre Régional',
           items: [
-            { text: 'Dashboard', link: '/fr/admin/dashboard' },
-            { text: 'Rapports', link: '/fr/admin/rapports' }
+            { text: 'Dashboard', link: '/fr/admin-centre/dashboard' },
+            { text: 'Étudiants', link: '/fr/admin-centre/etudiants' },
+            { text: 'Paiements', link: '/fr/admin-centre/paiements' },
+            { text: 'Rapports', link: '/fr/admin-centre/rapports' }
+          ]
+        }
+      ],
+      '/fr/admin-national/': [
+        {
+          text: 'Admin National',
+          items: [
+            { text: 'Dashboard', link: '/fr/admin-national/dashboard' },
+            { text: 'Centres', link: '/fr/admin-national/centres' },
+            { text: 'Analytics', link: '/fr/admin-national/analytics' },
+            { text: 'Configuration', link: '/fr/admin-national/configuration' }
+          ]
+        }
+      ],
+      '/fr/evaluateur/': [
+        {
+          text: 'Guide Évaluateur',
+          items: [
+            { text: 'Mes corrections', link: '/fr/evaluateur/corrections' },
+            { text: 'Correction détail', link: '/fr/evaluateur/correction-detail' },
+            { text: 'Certificats', link: '/fr/evaluateur/certificats' }
+          ]
+        }
+      ],
+      '/fr/mentor/': [
+        {
+          text: 'Guide Mentor',
+          items: [
+            { text: 'Mes mentorés', link: '/fr/mentor/mes-mentores' },
+            { text: 'Suivi progression', link: '/fr/mentor/suivi' },
+            { text: 'Messagerie', link: '/fr/mentor/messagerie' }
+          ]
+        }
+      ],
+      '/fr/parent/': [
+        {
+          text: 'Guide Parent',
+          items: [
+            { text: 'Mes enfants', link: '/fr/parent/mes-enfants' },
+            { text: 'Progression', link: '/fr/parent/progression' },
+            { text: 'Paiements', link: '/fr/parent/paiements' },
+            { text: 'Notifications', link: '/fr/parent/notifications' }
           ]
         }
       ],

@@ -1,21 +1,33 @@
-# EPIC-001: Setup Projet
+# EPIC-001: Dashboard Étudiant
 
 ## Contexte
-Mettre en place la structure complète du projet CNTEMAD LMS avec CI/CD, documentation et standards de développement.
+L'étudiant doit voir sa progression, ses EC payés, et accéder rapidement au catalogue.
 
 ## Stories
-- [x] STORY-001: Structure repository et fichiers de base
-- [ ] STORY-002: Configuration CI/CD GitHub Actions
-- [ ] STORY-003: Documentation initiale (README, CONTRIBUTING)
-- [ ] STORY-004: Templates issues et PR
+- [ ] STORY-001: Composant ProgressBar
+- [ ] STORY-002: Composant ECCard
+- [ ] STORY-003: Composable useStudent()
+- [ ] STORY-004: Page Dashboard étudiant
+- [ ] STORY-005: Page Catalogue EC
 
 ## Critères de succès Epic
-- [ ] Repo clonable et installable via `bench get-app`
-- [ ] CI passe (lint + tests)
-- [ ] Documentation accessible
-- [ ] Templates utilisables pour issues/PR
+- [ ] Étudiant voit sa progression globale en %
+- [ ] Liste des EC payés vs non payés visible
+- [ ] Navigation vers catalogue en 1 clic
+
+## Écrans concernés
+
+| Écran | Composants | API |
+|-------|-----------|-----|
+| Dashboard | `ProgressCard`, `ECList`, `PaymentHistory` | `get_student_progress()` |
+| Catalogue EC | `ECCard`, `FilterBar`, `SearchInput` | `get_available_ecs()` |
+| Détail EC | `ECDetail`, `PaymentButton`, `ContentPreview` | `get_ec_detail()` |
+| Progression | `YearProgress`, `ECStatusList`, `CertificateButton` | `get_yearly_progress()` |
+
+## Dépendances
+- Doctypes CNTEMAD Student, CNTEMAD EC
 
 ## Notes techniques
-- Utiliser GitHub Actions pour CI/CD
-- Pre-commit hooks pour lint
-- Conventional Commits
+- Mobile-first design
+- Frappe UI components (Card, Badge, Button)
+- Composable useStudent() pour les données
