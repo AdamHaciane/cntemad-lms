@@ -70,10 +70,19 @@ jobs:
           bench new-site --db-root-password root --admin-password admin test_site
           bench --site test_site install-app cntemad_lms
 
-      - name: Run tests
+      - name: Run tests with coverage
         run: |
           cd frappe-bench
-          bench --site test_site run-tests --app cntemad_lms
+          pip install coverage
+          coverage run -m pytest apps/cntemad_lms --tb=short -q
+          coverage report --fail-under=60
+          coverage xml -o coverage.xml
+
+      - name: Upload coverage
+        uses: codecov/codecov-action@v4
+        with:
+          file: frappe-bench/coverage.xml
+          fail_ci_if_error: false
 
   build:
     name: Build

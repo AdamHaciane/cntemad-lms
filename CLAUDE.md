@@ -50,6 +50,32 @@ pour maintenir la cohérence et faciliter les futures migrations.
 2. Vérifier les overrides existants dans `overrides/`
 3. Tester localement avant PR
 
+## Erreurs courantes (NE PAS)
+
+### Frontend
+- `axios` → utiliser `$resources` (pattern Frappe UI)
+- store Vuex/Pinia → Frappe gère l'état, pas besoin de store externe
+- hardcoder texte → utiliser `__('text')` pour i18n
+- créer composant custom → vérifier d'abord si Frappe UI en a un
+
+### Backend
+- `frappe.db.sql()` pour INSERT → utiliser `doc.insert()`
+- `frappe.db.sql()` pour UPDATE → utiliser `doc.save()`
+- oublier `@frappe.whitelist()` → endpoint inaccessible
+- credentials dans le code → utiliser `frappe.conf` ou variables d'env
+- `print()` pour debug → utiliser `frappe.log_error()` ou supprimer
+
+### Git
+- commit sur main directement → créer branche feature/
+- oublier ref story dans commit → ajouter `[STORY-XXX]`
+- commit message non-conventional → utiliser format `type(scope): desc`
+- push --force sur main → JAMAIS
+
+### Tests
+- oublier de tester mobile → vérifier 375px, 768px, 1280px
+- pas de tests pour nouveau endpoint → écrire tests unitaires
+- tester seulement happy path → tester aussi les erreurs
+
 ## Workflow Story
 
 ### Avant de coder

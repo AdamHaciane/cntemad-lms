@@ -35,3 +35,11 @@ repos:
         additional_dependencies:
           - eslint@8.56.0
           - eslint-plugin-vue@9.20.0
+
+  # Conventional commits
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v3.1.0
+    hooks:
+      - id: conventional-pre-commit
+        stages: [commit-msg]
+        args: [feat, fix, docs, style, refactor, test, chore, ci]

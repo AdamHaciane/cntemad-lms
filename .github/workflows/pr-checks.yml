@@ -1,0 +1,75 @@
+name: PR Checks
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+
+jobs:
+  validate-pr:
+    name: Validate PR
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check PR title format (conventional)
+        uses: amannn/action-semantic-pull-request@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          types: |
+            feat
+            fix
+            docs
+            style
+            refactor
+            test
+            chore
+            ci
+          scopes: |
+            doctype
+            api
+            frontend
+            ci
+            docs
+            payment
+            student
+          requireScope: false
+          subjectPattern: ^.{1,50}$
+          subjectPatternError: |
+            Le titre doit faire max 50 caractères.
+            Format: type(scope): description
+
+      - name: Check story reference in body
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const body = context.payload.pull_request.body || '';
+            const hasStoryRef = /STORY-\d+|closes #\d+|fixes #\d+/i.test(body);
+            const hasTestPlan = /test plan/i.test(body);
+
+            let warnings = [];
+
+            if (!hasStoryRef) {
+              warnings.push('⚠️ Pas de référence Story trouvée (STORY-XXX)');
+            }
+
+            if (!hasTestPlan) {
+              warnings.push('⚠️ Pas de section "Test Plan" trouvée');
+            }
+
+            if (warnings.length > 0) {
+              core.warning(warnings.join('\n'));
+              // Ne pas bloquer, juste avertir
+            }
+
+  labeler:
+    name: Label PR
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/labeler@v5
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          configuration-path: .github/labeler.yml

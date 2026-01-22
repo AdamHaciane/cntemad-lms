@@ -1,0 +1,67 @@
+# Auto-labeling des PRs basé sur les fichiers modifiés
+
+# Frontend
+frontend:
+  - changed-files:
+      - any-glob-to-any-file: 'frontend/**'
+
+# Backend Python
+backend:
+  - changed-files:
+      - any-glob-to-any-file: 'cntemad_lms/**/*.py'
+
+# Doctypes
+doctype:
+  - changed-files:
+      - any-glob-to-any-file: 'cntemad_lms/cntemad_lms/doctype/**'
+
+# API
+api:
+  - changed-files:
+      - any-glob-to-any-file: 'cntemad_lms/cntemad_lms/api/**'
+
+# CI/CD
+ci:
+  - changed-files:
+      - any-glob-to-any-file: '.github/**'
+
+# Documentation
+documentation:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'docs/**'
+          - '*.md'
+          - 'README.md'
+          - 'CONTRIBUTING.md'
+
+# Tests
+tests:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'tests/**'
+          - '**/*_test.py'
+          - '**/test_*.py'
+
+# Configuration
+config:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'pyproject.toml'
+          - '.pre-commit-config.yaml'
+          - 'package.json'
+          - 'tailwind.config.js'
+          - 'vite.config.js'
+
+# Paiements
+payment:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'cntemad_lms/cntemad_lms/doctype/cntemad_payment/**'
+          - 'cntemad_lms/cntemad_lms/api/payment*.py'
+
+# Étudiants
+student:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'cntemad_lms/cntemad_lms/doctype/cntemad_student/**'
+          - 'cntemad_lms/cntemad_lms/api/student*.py'
