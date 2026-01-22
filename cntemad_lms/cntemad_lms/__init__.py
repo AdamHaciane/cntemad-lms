@@ -1,1 +1,0 @@
-"""CNTEMAD LMS App."""
